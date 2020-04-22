@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech Food</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- custom CSS -->
+    {# <link rel="stylesheet" type="text/css" href="css/master.css"> #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/master.css' %}">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-light bg_agro-light">
+            <a class="navbar-brand" href="">
+                <img src="{% static 'img/logo_agrotech_food.png' %}" alt="Agrotech Food Logo">
+            </a>
+            <div class="d-none d-lg-block d-xl-none ml-auto">
+                <ul class="nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about_us">about us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">news</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none d-xl-block" href="#about_us">about us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vision">vision</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none d-xl-block" href="#news">news</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#technology">technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none d-xl-block" href="#contact">contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 position-relative">
+                    <input class="form-control mr-sm-2" type="search" aria-label="Search">
+                    <button class="btn position-absolute" type="submit">
+                        <img src='{% static "img/search_icon.svg" %}' alt="Search Button">
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- AGROTECH FOOD revolution -->
+        <section id="launching" class="d-flex">
+            <div class="d-flex flex-column w-100 launching_content justify-content-center">
+                <h1>AGROTECH FOOD</h1>
+                <h2>revolution</h2>
+            </div>
+            <img class="ml-auto" src={% static "img/launching.png" %} alt="Image - two people planting">
+        </section>
+        <!-- !END AGROTECH FOOD revolution -->
+
+        <!-- Welcome -->
+        <section id="welcome">
+            <div class="welcome_content mx-auto h-100">
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="mx-auto">
+                        <h2>Welcome</h2>
+                    </div>
+                    <p>Let’s discover together the humanbieng future based on “4th Industrial Revolution”</p>
+                </div>
+            </div>
+        </section>
+        <!-- !END Welcome -->
+
+        <!-- About us -->
+        <section id="about_us" class="d-flex flex-row">
+            <div class="row">
+                <div class="col-lg-5 about_us-left d-none d-lg-block">
+                    <div class="background_image" style="background-image: url({% static "img/about_us-1.png" %});"></div>
+                </div>
+                <div class="col-lg-7 about_us-right" style="background-image: url({% static "img/about_us-1.png" %});">
+                    <div class="upper">
+                        <h2>About us</h2>
+                        <p>Through research, development, production and sales of cold-resistant plants based on Freeze-the awaking technology (FTAT), the Ministry aims to contribute to the world's agriculture and to solve food and global environmental problems.
+                        </p>
+                        <ul>
+                            <li>Improvement of food self-sufficiency rate</li>
+                            <li>Produce truly healthy foods to improve human immunity, which 　lead to future medical reform.</li>
+                            <li>To solve the upcoming global food shortage due to the population explosion by improving crops production efficiency.</li>
+                        </ul>
+                    </div>
+                    <div class="lower d-flex flex-column-reverse align-items-end">
+                        <img class="d-none d-lg-block" src='{% static "img/about_us-2.png" %}' alt="Banana on a leaf">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- !END About us -->
+
+        <!-- Vision -->
+        <section id="vision">
+            <div class="upper d-flex flex-row">
+                <div class="upper_pic">
+                    <img src='{% static "img/vision-1.png" %}' alt="Happy black kids">
+                </div>
+                <div class="title my-auto">
+                    <h2>Vision</h2>
+                </div>
+            </div>
+            <div class="lower d-flex flex-row">
+                <div class="vision_content">
+                    <p>・Freeze-the awaking technology (FTAT) helps solve the food crisis by improving global food production.</p>
+                    <p>Contributing to farmers' economies by means of agricultural products in the temperate and cold regions.</p>
+                    <p>・Production of food to improve the body's immune system and contribution to the medical field.</p>
+                    <p>from the cure to the not-so-distant care.</p>
+                </div>
+                <div class="lower_pic d-none d-xl-block">
+                    <img src='{% static "img/vision-2.png" %}' alt="Greenhouse">
+                </div>
+            </div>
+        </section>
+        <!-- !END Vision -->
+
+        <!-- News -->
+        <section id="news" class="container">
+            <div class="d-flex justify-content-center title">
+                <h2>News</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col_spacing">
+                    <div class="card_background_image" style="background: url({% static "img/news-1.png" %}) no-repeat;">
+                        <div class="card">
+                            <div class="tag position-absolute">harvest</div>
+                            <div class="card-img-top d-none d-lg-block">
+                                <img src='{% static "img/news-1.png" %}' alt="Greenhouses">
+                            </div>
+                            <div class="card-body"></div>
+                            <p class="card-text">“Recruitment of fields for freeze-thaw awakening technology”</p>
+                            <a href="" class="btn">read</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col_spacing">
+                    <div class="card_background_image" style="background: url({% static "img/news-2.png" %}) no-repeat;">
+                        <div class="card">
+                            <div class="tag position-absolute">harvest</div>
+                            <div class="card-img-top d-none d-lg-block">
+                                <img src='{% static "img/news-2.png" %}' alt="Banana Tree">
+                            </div>
+                            <div class="card-body"></div>
+                            <p class="card-text">“Banana peel no longer disposable with edible skins you can now really sink your teeth into.”</p>
+                            <a href="" class="btn">read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center btn_more">
+                <a href="" class="btn">more..</a>
+            </div>
+        </section>
+        <!-- !END News -->
+
+        <!-- Technology -->
+        <section id="technology">
+            <div class="technology_content d-flex flex-column">
+                <div class="d-flex justify-content-center">
+                    <h2>Technology</h2>
+                </div>
+                <p>The freeze-thaw awakening technology(FTAT) is a novel technology developed by professor Setsuzo Tanaka. The cells or seeds are frozen at a temperature of -60. The seeds and cells experience artificial ice ages by the low-temperature treatment,
+                    which induces an initialization of the environmental information encoded in the genome of the plants. This leads to an enhanced adaptivity towards various environments.In contrast to genetic recombination techniques, this technology
+                    provides plants with better resistance to high- and low temperature as well as resistance towards insects without altering the genome itself. In addition, this technology improves the growth speed of the plants and enables a higher
+                    crop yield. This technology is harmless to the environment and health and makes it possible to organically grow and stably crop tropical plants in the temperate zone. The reproducibility of the technology is verified in over 230 different
+                    types of plants so far.</p>
+            </div>
+        </section>
+        <!-- !END Technology -->
+
+        <!-- Contact us / Q&A -->
+        <section id="contact">
+            <!-- TODO: Fix for some specific screen sizes -->
+            <div class="row">
+                <div class="left_image col-7 d-none d-lg-block">
+                    <img src='{% static "img/contact_us.png" %}' alt="Righting with a laptop">
+                </div>
+                <div class="contact_content col-10 col-lg-5">
+                    <h2>Contact us</h2>
+                    <div class="row">
+                        <div class="col-1">
+                            <div class="svg-container">
+                                <svg viewBox="0 0 13 13" preserveAspectRatio="xMinYMin meet" class="svg-content">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.66253 12.2144L6.5 12.9533L7.33747 12.2144C10.0117 9.85487 11.375 7.75896 11.375 5.79703C11.375 3.01166 9.21589 0.887695 6.5 0.887695C3.78411 0.887695 1.625 3.01166 1.625 5.79703C1.625 7.75896 2.98829 9.85487 5.66253 12.2144ZM6.5 2.46937C8.32074 2.46937 9.75 3.87536 9.75 5.7699C9.75 7.11296 8.69538 8.78139 6.5 10.7684C4.30462 8.78139 3.25 7.11296 3.25 5.7699C3.25 3.87536 4.67926 2.46937 6.5 2.46937ZM6.5 3.29276C7.84619 3.29276 8.9375 4.37448 8.9375 5.70886C8.9375 7.04323 7.84619 8.12496 6.5 8.12496C5.15381 8.12496 4.0625 7.04323 4.0625 5.70886C4.0625 4.37448 5.15381 3.29276 6.5 3.29276ZM5.6875 5.67399C5.6875 5.20903 6.05127 4.8321 6.5 4.8321C6.94873 4.8321 7.3125 5.20903 7.3125 5.67399C7.3125 6.13896 6.94873 6.51588 6.5 6.51588C6.05127 6.51588 5.6875 6.13896 5.6875 5.67399Z" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-11">
+                            <p>Address: Tokyo-to,Setagaya-ku Chitosedai 4-6-5</p>
+                        </div>
+                        <div class="col-1">
+                            <div class="svg-container">
+                                <svg viewBox="0 0 14 13" preserveAspectRatio="xMinYMin meet" class="svg-content">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.75004 1.68384H12.25C12.8944 1.68384 13.4167 2.16401 13.4167 2.75633V10.2637C13.4167 10.8561 12.8944 11.3362 12.25 11.3362H1.75004C1.10571 11.3362 0.583374 10.8561 0.583374 10.2637V2.75633C0.583374 2.16401 1.10571 1.68384 1.75004 1.68384ZM1.75004 5.25185V10.2517H12.25V5.25209L7.00003 7.70975L1.75004 5.25185ZM1.75004 4.03061L7.00006 6.48852L12.25 4.03087V2.74433H1.75004V4.03061Z" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class=col-11>
+                            <p>E-mail: info@agrevo.life</p>
+                        </div>
+                        <div class="col-1">
+                            <div class="svg-container">
+                                <svg viewBox="0 0 30 28" preserveAspectRatio="xMinYMin meet" class="svg-content">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.269 14.6798C13.2536 13.7312 12.4144 12.7062 11.9692 11.8758C11.823 11.6032 11.732 11.3744 11.6921 11.2109L12.5927 10.3698C12.7903 10.1853 12.8853 10.0954 13.008 9.97499C13.2681 9.7199 13.4849 9.48679 13.6757 9.24688C14.5338 8.16759 14.8527 6.99265 13.8369 5.93466C11.9136 3.42367 10.6197 1.87061 9.79018 1.10583C8.07856 -0.472184 5.28998 -0.260785 3.80558 1.10427C3.08883 1.7634 2.84519 1.99067 2.10922 2.68835C-2.18893 6.70191 0.374497 14.9994 7.14761 21.3269C13.9196 27.6533 22.8104 30.0473 27.1199 26.023C27.7964 25.4144 28.3746 24.8746 28.832 24.4234C30.2801 22.9949 30.4988 20.5043 28.821 18.8773C28.0231 18.1036 26.4365 16.9545 23.6302 15.0806C22.6037 14.2312 21.4031 14.4155 20.3364 15.0686C19.856 15.3628 19.5179 15.6505 18.8814 16.2451L17.9817 17.0853C17.8067 17.048 17.562 16.9632 17.2703 16.8269C16.381 16.4112 15.2836 15.6277 14.269 14.6798ZM20.4149 20.0224L21.5324 18.9788C21.7233 18.8005 21.8743 18.663 21.9991 18.555C24.2618 20.0774 25.5859 21.0455 26.1206 21.5641C26.3024 21.7404 26.2689 22.122 26.1096 22.2792C25.696 22.6872 25.1566 23.1909 24.4937 23.7876C22.0472 26.0717 15.3019 24.2554 9.79896 19.1145C4.29389 13.9716 2.34837 7.67417 4.76992 5.41291C5.50209 4.71891 5.73236 4.50411 6.43598 3.85705C6.5477 3.75431 7.00874 3.71936 7.15639 3.85549C7.73396 4.38798 8.81541 5.67445 10.3961 7.72059C10.3637 7.75357 10.3293 7.78789 10.2929 7.82358C10.1978 7.91682 10.1177 7.9926 9.94136 8.15738C9.58688 8.4885 9.43212 8.63306 9.27734 8.77758C9.1574 8.88957 9.03745 9.00153 8.82456 9.20026C6.6743 11.2069 8.38065 14.3893 11.6176 17.4133C14.8527 20.4355 18.2647 22.0303 20.4149 20.0224Z" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class=col-11>
+                            <p>Phone: +81 3645-09036-9036</p>
+                        </div>
+                    </div>
+                    <h2>Q&A</h2>
+                    <form action="POST">
+                        <div class="form-group"><label for="name">name</label>
+                            <input class="form-control" name="name" type="text">
+                        </div>
+                        <div class="form-group"><label for="email">email</label>
+                            <input class="form-control" name="email" type="text"></div>
+
+                        <div class="form-group"><label for="question">question</label>
+                            <textarea class="form-control" name="question" id="question" cols="30" rows="10"></textarea></div>
+                        <div class="d-flex justify-content-end button_area">
+                            <button type="submit" class="btn">send</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="social col-2 d-block d-lg-none">
+                    <div class="d-flex flex-column">
+                        <a href=""><img src='{% static "img/twitter.svg" %}' alt="Twitter"></a>
+                        <a href=""><img src='{% static "img/instagram.svg" %}' alt="Instagram"></a>
+                        <a href=""><img src='{% static "img/facebook.svg" %}' alt="Facebook"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- !END Contact us / Q&A -->
+
+    </main>
+
+    <footer class="d-none d-lg-block">
+        <!-- TODO -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about_us">about us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vision">vision</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">news</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#technology">technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="d-flex justify-content-center">
+            <a href="">
+                <img src='{% static "img/facebook.svg" %}' alt="[Facebook Icon]">
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- !END Scripts -->
+</body>
+
+</html>
