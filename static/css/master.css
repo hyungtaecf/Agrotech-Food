@@ -162,6 +162,7 @@ header .navbar .form-inline button {
   position: absolute;
   right: 0;
   height: 100vh;
+  max-width: 45vw;
 }
 
 @media (max-width: 1350px) {
