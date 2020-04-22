@@ -24,7 +24,7 @@ SECRET_KEY = '7mu4dv2ea$fiz69=-be0g=1r!&t(5vuoq7f69#1m8b_jy%^51_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['agrotech.pythonanywhere.com','127.0.0.1','localhost']
 
