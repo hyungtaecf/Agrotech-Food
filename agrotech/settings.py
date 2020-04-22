@@ -23,15 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7mu4dv2ea$fiz69=-be0g=1r!&t(5vuoq7f69#1m8b_jy%^51_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-<<<<<<< HEAD
+
 DEBUG = False
 
 ALLOWED_HOSTS = ['agrotech.pythonanywhere.com','http://127.0.0.1:8000/','localhost']
-=======
-DEBUG = True
-
-ALLOWED_HOSTS = []
->>>>>>> e00c1ac31d340bdac891794733fde9f8f9102b9b
 
 
 # Application definition
@@ -124,8 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-<<<<<<< HEAD
+
 STATIC_ROOT = '/home/agrotech/agrotech/static'
-=======
->>>>>>> e00c1ac31d340bdac891794733fde9f8f9102b9b
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
