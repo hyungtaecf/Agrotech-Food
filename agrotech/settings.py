@@ -26,7 +26,7 @@ SECRET_KEY = '7mu4dv2ea$fiz69=-be0g=1r!&t(5vuoq7f69#1m8b_jy%^51_'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['agrotech.pythonanywhere.com','http://127.0.0.1:8000/','localhost']
+ALLOWED_HOSTS = ['agrotech.pythonanywhere.com','127.0.0.1','localhost']
 
 
 # Application definition
