@@ -664,9 +664,7 @@ header {
                 letter-spacing: 0.015em;
             }
             p {
-                font-family: "Hind Madurai";
                 font-size: 1rem;
-                text-align: center;
                 font-weight: 300;
                 line-height: 159.6%;
                 letter-spacing: 0.025em;
@@ -676,6 +674,15 @@ header {
     @media(max-width: 768px) and (orientation:landscape) {
         .technology_content {
             background: rgba($agro_color-white, 0.87);
+        }
+    }
+    @media(max-width: 575px) {
+        .technology_content {
+            padding: 1rem 1rem;
+            p {
+                text-align: justify;
+                font-size: .85rem;
+            }
         }
     }
 }
