@@ -83,6 +83,9 @@ header {
                     max-width: 3rem;
                 }
             }
+            .nav-item {
+                margin: 0;
+            }
         }
     }
 }
@@ -548,7 +551,7 @@ header {
                 .card_background_image {
                     height: 100vh!important;
                     width: 100%!important;
-                    padding: 3rem;
+                    padding: 10vh 10vw;
                     background-size: cover!important;
                     background-position: center!important;
                     .card {

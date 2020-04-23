@@ -132,6 +132,9 @@ header .navbar .form-inline button {
   header .navbar .navbar-brand img {
     max-width: 3rem;
   }
+  header .navbar .nav-item {
+    margin: 0;
+  }
 }
 
 #launching {
@@ -649,7 +652,7 @@ header .navbar .form-inline button {
   #news .row .col_spacing .card_background_image {
     height: 100vh !important;
     width: 100% !important;
-    padding: 3rem;
+    padding: 10vh 10vw;
     background-size: cover !important;
     background-position: center !important;
   }
