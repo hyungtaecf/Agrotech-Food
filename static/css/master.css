@@ -126,6 +126,9 @@ header .navbar .form-inline button {
   header .navbar {
     min-height: 4rem;
   }
+  header .navbar .navbar-brand {
+    margin: 0;
+  }
   header .navbar .navbar-brand img {
     max-width: 3rem;
   }
@@ -644,9 +647,11 @@ header .navbar .form-inline button {
     padding: 0;
   }
   #news .row .col_spacing .card_background_image {
-    height: 100vh;
+    height: 100vh !important;
+    width: 100% !important;
     padding: 3rem;
-    background-size: 100% 100% !important;
+    background-size: cover !important;
+    background-position: center !important;
   }
   #news .row .col_spacing .card_background_image .card {
     height: 80vh;
@@ -727,7 +732,7 @@ header .navbar .form-inline button {
 @media (max-width: 992px) {
   #technology .technology_content {
     padding: 2.5rem;
-    width: 70%;
+    width: 80%;
   }
   #technology .technology_content h2 {
     font-size: 2rem;
@@ -768,10 +773,9 @@ header .navbar .form-inline button {
   }
   #technology .technology_content p {
     font-family: "Hind Madurai";
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-align: center;
     font-weight: 300;
-    font-size: .625rem;
     line-height: 159.6%;
     letter-spacing: 0.025em;
   }

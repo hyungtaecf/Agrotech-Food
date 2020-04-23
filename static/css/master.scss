@@ -23,7 +23,6 @@ body {
 }
 
 header {
-    // z-index: 2;
     overflow: visible;
     .navbar {
         min-height: 13.7rem;
@@ -79,6 +78,7 @@ header {
         @media (max-width: 992px) {
             min-height: 4rem;
             .navbar-brand {
+                margin: 0;
                 img {
                     max-width: 3rem;
                 }
@@ -546,9 +546,11 @@ header {
             .col_spacing {
                 padding: 0;
                 .card_background_image {
-                    height: 100vh;
+                    height: 100vh!important;
+                    width: 100%!important;
                     padding: 3rem;
-                    background-size: 100% 100% !important;
+                    background-size: cover!important;
+                    background-position: center!important;
                     .card {
                         height: 80vh;
                         border: .2rem solid $agro_color-white;
@@ -626,7 +628,7 @@ header {
     @media (max-width: 992px) {
         .technology_content {
             padding: 2.5rem;
-            width: 70%;
+            width: 80%;
             h2 {
                 font-size: 2rem;
                 height: 3rem;
@@ -663,10 +665,9 @@ header {
             }
             p {
                 font-family: "Hind Madurai";
-                font-size: 1.25rem;
+                font-size: 1rem;
                 text-align: center;
                 font-weight: 300;
-                font-size: .625rem;
                 line-height: 159.6%;
                 letter-spacing: 0.025em;
             }
