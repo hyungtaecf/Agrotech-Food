@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.Home.as_view(),name='index'),
     path('blog_post',views.PostDetail.as_view(),name='post_detail'),
-    path('message_sent',views.MessageSent.as_view(),name='message_sent'),
-    path('news/', include('blog.urls', namespace='blog')),
+    # path('message_sent',views.MessageSent.as_view(),name='message_sent'),
+    # path('news/', include('blog.urls', namespace='blog')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
