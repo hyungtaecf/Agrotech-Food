@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Agrevo News{% endblock %}
+{% block styles %}<link rel="stylesheet" type="text/css" href='{% static "css/news.css" %}'>{% endblock %}
+{% block main_content %}
+
+<section id="launching">
+  <div class="">
+    <div class="launching_image" style="background: url({% static "img/agrevo_news.png" %});"></div>
+    <div class="circle_container">
+      <svg viewBox="0 0 1078 1031" fill="none">
+        <path d="M1004.5 515.5C1004.5 756.556 799.211 957.5 539 957.5C278.789 957.5 73.5 756.556 73.5 515.5C73.5 274.444 278.789 73.5 539 73.5C799.211 73.5 1004.5 274.444 1004.5 515.5Z" stroke="#1F6C34" stroke-width="147"/>
+      </svg>
+    </div>
+    <div class="launching_text">
+      <h1 id="welcome_label">Welcome</h1>
+      <h1 id="to_agrevo_news_label">to AGREVO NEWS</h1>
+    </div>
+
+  </div>
+</section>
+
+<section class="most_recent">
+  <div class="d-flex justify-content-center section_title">
+      <h2>Most Recent</h2>
+  </div>
+  {% include "_post_preview-2.html" %}
+
+</section>
+
+{# FROM HERE --> TEST #}
+{% for article in post_list %}
+  {{article.text|safe}}
+  <br>
+{% endfor %}
+
+{% endblock %}

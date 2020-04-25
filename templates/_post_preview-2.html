@@ -1,0 +1,16 @@
+{% load static %}
+<div class="related_story_card d-flex flex-column">
+  <div class="card_background_image" style="background: url({% static "img/vision-2.png" %}) no-repeat;"></div>
+  <div class="post_info m-auto">
+    <h1>"Japan's Technology" to Avoid a Worldwide Food Crisis</h1>
+    <div class="d-flex post_info_sub">
+      <img src="{% static 'img/create_icon.svg' %}" alt="[pencil]">
+      <p>By Danielle Demetriou</p>
+    </div>
+    <div class="d-flex post_info_sub">
+      <img src="{% static 'img/clock.svg' %}" alt="[pencil]">
+      <p>1 FEBRUARY 2018 • 5:39 PM</p>
+    </div>
+    <a href="{% url 'post_detail' %}" class="btn">read</a>
+  </div>
+</div>

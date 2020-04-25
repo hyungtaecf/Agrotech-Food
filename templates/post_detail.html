@@ -1,28 +1,52 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}"Japan's Technology" to Avoid a Worldwide Food Crisis - AGREVO LIFE{% endblock %}
+{% block title %}"Japan's Technology" to Avoid a Worldwide Food Crisis{% endblock %}
 
-{% block styles %}<link rel="stylesheet" type="text/css" href='{% static "css/news.css" %}'>{% endblock %}
+{% block styles %}<link rel="stylesheet" type="text/css" href='{% static "css/post_detail.css" %}'>{% endblock %}
 
 {% block main_content %}
+
 <section>
-  <div class="container mt-4 blog_post">
-    <h1>"Japan's Technology" to Avoid a Worldwide Food Crisis</h1>
-    <br>
-    <p>　More than 90% of bananas are imported from the tropics and subtropics, which everyone likes for their ease of eating and flavor.Setsuzo Tanaka, 69, who has no agricultural experience, has developed a technology that allows bananas to be grown in Japan.Tanaka's love of bananas has led him to study the cultivation of domestically produced bananas on his own and, after nearly 40 years of research, succeeded in cultivating bananas in Okayama City, which has fallen below zero in winter.He obtained a patent in 2018 under the FTAT(Freeze-thaw Awakening Technology), which was inspired by existing plants that survived the Ice Age.</p>
-    <br>
-    <p>　FTAT used to freeze plant seeds and cells down to minus 60 degrees Celsius for six months.Environmental information recorded in a gene is reset by giving super-low temperature stress to seeds and cells by giving false sensation of a glacial stage.As a result, the adaptability of the seeds to the environment is maximized.Different from gene recombination technology, natural excellent ability to sleep in DNA without any abnormality in gene information is derived, and cold resistance, heat resistance and insect resistance of plants are enhanced.It's also the ultimate breed improvement method, which enables amazing growth speed and overwhelming increase in harvests. FTAT is a fully organic cultivation of organic agrochemicals, which is harmless to humans and the earth, and enables stable harvesting of tropical crops in temperate regions.To date, the technique has succeeded in more than 230 plants.</p>
-    <br>
-    <p>　"BANANA DREAM," a team of D&T Farm, an agricultural corporation whose director is Mr. Tanaka, won the top SMBC award at the Agritec Summit 2017 hosted by Nihon Keizai Shimbun.The Agricec Summit is an event that combines cutting-edge agriculture and technology to communicate Agricec's current status and potential to and from the country.</p>
-    <p>　The company plans to expand its farm to one square kilometer in two years and tie up with other farms in Japan to grow bananas under FTAT.A facility to raise 1.2 million seedlings is constructed in Kitakyushu, Fukuoka Prefecture, and plans to increase the number to 10 million by 2020.Worldwide exports are also included in the business plan.</p>
-    <p>　Panama disease is spreading throughout Southeast Asia and Latin America.The fact that you can grow up in cooler places that are less susceptible to disease, such as parts of Japan and China, may lead to a safer supply.Tanaka works with the Chinese Agriculture Ministry to grow bananas and papaya in Jilin Province in southeastern China.It is also conducting further tests with the University of Agriculture of China to study whether bananas grow in southern China's Hainan province, which suffers from Panama disease.</p>
-    <br>
-    <p>　Bananas made by FTAT were named "Monge Bananas.""Monge" means "great" in Okayama dialect.Surprisingly, Mongey bananas are eaten to the skin and are sweeter than ordinary bananas.It has already been sold on the Internet, at theme parks and department stores in Japan.</p>
-    <br>
-    <p>　This technology is also suitable for places like Mongolia, where extreme temperatures are present throughout the year.It produces crops that are not only cold but also heat-resistant.They are also attracting attention from European countries, the United States and Brazil, which are very interested in organic cultivation.</p>
-    <br>
-    <p>　The effects of the coronavirus are now raising fears of a global food crisis. FTAT may save the world's crisis when the nation's agricultural self-sufficiency rate is becoming more important.</p>
+  <div class="container post_header">
+    <div class="d-flex justify-content-center section_title">
+        <h2>News</h2>
+    </div>
+    <div class="post_info">
+      <h1>"Japan's Technology" to Avoid a Worldwide Food Crisis</h1>
+      <div class="d-flex post_info_sub">
+        <img src="{% static 'img/create_icon.svg' %}" alt="[pencil]">
+        <p>By Danielle Demetriou</p>
+      </div>
+      <div class="d-flex post_info_sub">
+        <img src="{% static 'img/clock.svg' %}" alt="[pencil]">
+        <p>1 FEBRUARY 2018 • 5:39 PM</p>
+      </div>
+    </div>
   </div>
+</section>
+
+<section class="container blog_post">
+  <div class="img_container">
+    <img src="{% static "img/news-1.png" %}" alt="“Recruitment of fields for freeze-thaw awakening technology”">
+  </div>
+  <p>　More than 90% of bananas are imported from the tropics and subtropics, which everyone likes for their ease of eating and flavor.Setsuzo Tanaka, 69, who has no agricultural experience, has developed a technology that allows bananas to be grown in Japan.Tanaka's love of bananas has led him to study the cultivation of domestically produced bananas on his own and, after nearly 40 years of research, succeeded in cultivating bananas in Okayama City, which has fallen below zero in winter.He obtained a patent in 2018 under the FTAT(Freeze-thaw Awakening Technology), which was inspired by existing plants that survived the Ice Age.</p>
+  <br>
+  <p>　FTAT used to freeze plant seeds and cells down to minus 60 degrees Celsius for six months.Environmental information recorded in a gene is reset by giving super-low temperature stress to seeds and cells by giving false sensation of a glacial stage.As a result, the adaptability of the seeds to the environment is maximized.Different from gene recombination technology, natural excellent ability to sleep in DNA without any abnormality in gene information is derived, and cold resistance, heat resistance and insect resistance of plants are enhanced.It's also the ultimate breed improvement method, which enables amazing growth speed and overwhelming increase in harvests. FTAT is a fully organic cultivation of organic agrochemicals, which is harmless to humans and the earth, and enables stable harvesting of tropical crops in temperate regions.To date, the technique has succeeded in more than 230 plants.</p>
+  <br>
+  <p>　"BANANA DREAM," a team of D&T Farm, an agricultural corporation whose director is Mr. Tanaka, won the top SMBC award at the Agritec Summit 2017 hosted by Nihon Keizai Shimbun.The Agricec Summit is an event that combines cutting-edge agriculture and technology to communicate Agricec's current status and potential to and from the country.</p>
+  <p>　The company plans to expand its farm to one square kilometer in two years and tie up with other farms in Japan to grow bananas under FTAT.A facility to raise 1.2 million seedlings is constructed in Kitakyushu, Fukuoka Prefecture, and plans to increase the number to 10 million by 2020.Worldwide exports are also included in the business plan.</p>
+  <p>　Panama disease is spreading throughout Southeast Asia and Latin America.The fact that you can grow up in cooler places that are less susceptible to disease, such as parts of Japan and China, may lead to a safer supply.Tanaka works with the Chinese Agriculture Ministry to grow bananas and papaya in Jilin Province in southeastern China.It is also conducting further tests with the University of Agriculture of China to study whether bananas grow in southern China's Hainan province, which suffers from Panama disease.</p>
+  <br>
+  <p>　Bananas made by FTAT were named "Monge Bananas.""Monge" means "great" in Okayama dialect.Surprisingly, Mongey bananas are eaten to the skin and are sweeter than ordinary bananas.It has already been sold on the Internet, at theme parks and department stores in Japan.</p>
+  <br>
+  <p>　This technology is also suitable for places like Mongolia, where extreme temperatures are present throughout the year.It produces crops that are not only cold but also heat-resistant.They are also attracting attention from European countries, the United States and Brazil, which are very interested in organic cultivation.</p>
+  <br>
+  <p>　The effects of the coronavirus are now raising fears of a global food crisis. FTAT may save the world's crisis when the nation's agricultural self-sufficiency rate is becoming more important.</p>
+</section>
+
+<section class="related_posts">
+  <h1>Related Stories</h1>
+  {% include "_post_preview-1.html" %}
 </section>
 
 {% endblock %}

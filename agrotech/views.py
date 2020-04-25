@@ -6,3 +6,6 @@ class Home(TemplateView):
 
 class PostDetail(TemplateView):
     template_name = 'post_detail.html'
+
+class MessageSent(TemplateView):
+    template_name = 'message_sent.html'

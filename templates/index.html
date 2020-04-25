@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}AGREVO LIFE - Agrotech Food Revolution{% endblock %}
+{% block title %}Agrotech Food Revolution{% endblock %}
+
+{% block styles %}<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">{% endblock %}
 
 {% block main_content %}
         <!-- AGROTECH FOOD revolution -->
         <section id="launching" class="d-flex">
-            <div class="d-flex flex-column w-100 launching_content justify-content-center">
-                <h1>AGROTECH FOOD</h1>
+            <div class="d-flex w-100 mx-auto">
+              <div class="d-flex flex-column w-100 launching_content justify-content-center">
+                <h1>agrotech food</h1>
                 <h2>revolution</h2>
+              </div>
             </div>
-            <img class="ml-auto" src={% static "img/launching.png" %} alt="Image - two people planting">
+            <div class="img_container">
+              <img src={% static "img/launching.png" %} alt="Image - two people planting">
+            </div>
         </section>
         <!-- !END AGROTECH FOOD revolution -->
 
@@ -36,11 +42,11 @@
                 <div class="col-lg-7 about_us-right" style="background-image: url({% static "img/about_us-1.png" %});">
                     <div class="upper">
                         <h2>About us</h2>
-                        <p>Through research, development, production and sales of cold-resistant plants based on Freeze-the awaking technology (FTAT), the Ministry aims to contribute to the world's agriculture and to solve food and global environmental problems.
+                        <p>Through research, development, production and sales of cold-resistant plants based on Freeze-thaw awaking technology (FTAT), the Ministry aims to contribute to the world's agriculture and to solve food and global environmental problems.
                         </p>
                         <ul>
                             <li>Improvement of food self-sufficiency rate</li>
-                            <li>Produce truly healthy foods to improve human immunity, which 　lead to future medical reform.</li>
+                            <li>Produce truly healthy foods to improve human immunity, which lead to future medical reform.</li>
                             <li>To solve the upcoming global food shortage due to the population explosion by improving crops production efficiency.</li>
                         </ul>
                     </div>
@@ -83,9 +89,11 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 col_spacing">
-                    <div class="card_background_image" style="background: url({% static "img/news-1_small.png" %}) no-repeat;">
+                    <div class="card_background_image" style="background: url({% static "img/news-1.png" %}) no-repeat;">
                         <div class="card">
-                            <div class="tag position-absolute">harvest</div>
+                            <div class="tag d-flex align-items-center position-absolute">
+                              <p>harvest</p>
+                            </div>
                             <div class="card-img-top d-none d-lg-block">
                                 <img src='{% static "img/news-1.png" %}' alt="Greenhouses">
                             </div>
@@ -99,7 +107,9 @@
                 <div class="col-lg-6 col_spacing">
                     <div class="card_background_image" style="background: url({% static "img/news-2.png" %}) no-repeat;">
                         <div class="card">
-                            <div class="tag position-absolute">harvest</div>
+                          <div class="tag d-flex align-items-center position-absolute">
+                            <p>harvest</p>
+                          </div>
                             <div class="card-img-top d-none d-lg-block">
                                 <img src='{% static "img/news-2.png" %}' alt="Banana Tree">
                             </div>

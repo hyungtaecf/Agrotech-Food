@@ -1,54 +1,226 @@
-body {
-  background: #1F6633;
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("../fonts/abhaya-libre-v5-sinhala_latin-ext_latin-regular.woff2") format("woff2"), url("../fonts/abhaya-libre-v5-sinhala_latin-ext_latin-regular.woff") format("woff"), url("../fonts/abhaya-libre-v5-sinhala_latin-ext_latin-regular.ttf") format("ttf");
 }
 
-.blog_post {
-  background: #FFF;
-  padding: 2rem 1rem;
+@font-face {
+  font-family: "Abhaya Libre Bold";
+  src: url("../fonts/abhaya-libre-v5-sinhala_latin-ext_latin-800.woff2") format("woff2"), url("../fonts/abhaya-libre-v5-sinhala_latin-ext_latin-800.woff") format("woff"), url("../fonts/abhaya-libre-v5-sinhala_latin-ext_latin-800.ttf") format("ttf");
 }
 
-.blog_post h1 {
-  font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 1rem;
+@font-face {
+  font-family: "Alegreya Sans SC";
+  src: url("../fonts/alegreya-sans-sc-v9-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2") format("woff2"), url("../fonts/alegreya-sans-sc-v9-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff") format("woff"), url("../fonts/alegreya-sans-sc-v9-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.ttf") format("ttf");
 }
 
-.blog_post p {
-  text-align: justify;
-  font-size: 1.2rem;
-  margin-bottom: 0;
+@font-face {
+  font-family: "Allerta Stencil";
+  src: url("../fonts/allerta-stencil-v10-latin-regular.woff2") format("woff2"), url("../fonts/allerta-stencil-v10-latin-regular.woff") format("woff"), url("../fonts/allerta-stencil-v10-latin-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Hind Madurai";
+  src: url("../fonts/hind-madurai-v5-tamil_latin-ext_latin-regular.woff2") format("woff2"), url("../fonts/hind-madurai-v5-tamil_latin-ext_latin-regular.woff") format("woff"), url("../fonts/hind-madurai-v5-tamil_latin-ext_latin-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Hind Madurai Bold";
+  src: url("../fonts/hind-madurai-v5-tamil_latin-ext_latin-600.woff2") format("woff2"), url("../fonts/hind-madurai-v5-tamil_latin-ext_latin-600.woff") format("woff"), url("../fonts/hind-madurai-v5-tamil_latin-ext_latin-600.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/opensans-all-regular.woff2") format("woff2"), url("../fonts/opensans-all-regular.woff") format("woff"), url("../fonts/opensans-all-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("../fonts/opensans-all-700.woff2") format("woff2"), url("../fonts/opensans-all-700.woff") format("woff"), url("../fonts/opensans-all-700.ttf") format("ttf");
+}
+
+#launching {
+  position: relative;
+}
+
+#launching .launching_image {
+  height: 30vw;
+  width: 64vw;
+  background-size: cover !important;
+  background-position: center !important;
+  border-bottom-right-radius: .56rem;
+}
+
+#launching .circle_container {
+  position: absolute;
+  z-index: -1;
+  height: 55vw;
+  top: -7vw;
+  left: 25vw;
+}
+
+#launching .circle_container svg {
+  height: 100%;
+}
+
+#launching .launching_text {
+  font-family: "Abhaya Libre Bold";
+  margin: 5vw 0 5vw 5vw;
+}
+
+#launching .launching_text #welcome_label {
+  line-height: 127.1%;
+  letter-spacing: 0.015em;
+  font-size: 12vw;
+}
+
+#launching .launching_text #to_agrevo_news_label {
+  line-height: 127.1%;
+  letter-spacing: 0.015em;
+  margin-left: 20vw;
+  font-size: 6vw;
+}
+
+@media (orientation: portrait) {
+  #launching .launching_image {
+    height: 36vw;
+    width: 76.8vw;
+  }
+  #launching .circle_container {
+    height: 66vw;
+    top: -8.4vw;
+    left: 30vw;
+  }
+  #launching .circle_container svg {
+    height: 100%;
+  }
+  #launching .launching_text {
+    margin: 6vw 0 6vw 6vw;
+  }
+  #launching .launching_text #welcome_label {
+    line-height: 127.1%;
+    letter-spacing: 0.015em;
+    font-size: 14.4vw;
+  }
+  #launching .launching_text #to_agrevo_news_label {
+    line-height: 127.1%;
+    letter-spacing: 0.015em;
+    margin-left: 24vw;
+    font-size: 7.2vw;
+  }
+}
+
+@media (orientation: landscape) {
+  #launching {
+    min-height: 100vh;
+  }
+}
+
+.most_recent {
+  margin-bottom: 3.5rem;
+  padding: 0 1vw;
+}
+
+.most_recent .section_title {
+  font-family: "Abhaya Libre Bold";
+  height: 20vh;
+}
+
+.most_recent .section_title h2 {
+  font-size: 1.5rem;
+  height: 1.8rem;
+  text-align: center;
+  width: 10rem;
+  min-width: 9.3rem;
+  border-bottom: 0.2rem solid #1f6c34;
+  margin: 8vh 0 3rem 0;
+}
+
+.most_recent .related_story_card {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 80vh;
+}
+
+.most_recent .related_story_card .card_background_image {
+  height: 100% !important;
+  max-height: 50vh !important;
+  width: 100% !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.most_recent .related_story_card .post_info {
+  min-height: 10rem;
+  height: 20vh;
+  padding: .5rem;
+  width: 100%;
+}
+
+.most_recent .related_story_card .post_info h1 {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 127.1%;
+  letter-spacing: 0.015em;
+  margin-bottom: .5rem;
+}
+
+.most_recent .related_story_card .post_info .post_info_sub img {
+  width: .75rem;
+}
+
+.most_recent .related_story_card .post_info .post_info_sub p {
+  margin: 0 0 0 .5rem;
+  font-family: "Open Sans";
+  font-size: .75rem;
+  line-height: 127.1%;
+  letter-spacing: 0.015em;
+  height: auto;
+}
+
+.most_recent .related_story_card .post_info .btn {
+  background-color: #C4C4C4;
+  border-radius: 1rem;
+  color: #FFF;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: .3rem;
+  letter-spacing: 0.015em;
+  width: 10rem;
+  height: 1.2rem;
+  margin: .5rem 0;
+  text-transform: lowercase;
+}
+
+@media (orientation: landscape) {
+  .most_recent .section_title {
+    height: 15vh;
+  }
+  .most_recent .related_story_card {
+    height: 85vh;
+  }
+  .most_recent .related_story_card .card_background_image {
+    max-height: 50vh !important;
+  }
 }
 
 @media (min-width: 576px) {
-  .blog_post {
-    padding: 2rem 2rem;
+  .most_recent {
+    padding: 0 calc(10vw - 1rem);
   }
 }
 
 @media (min-width: 768px) {
-  .blog_post {
-    padding: 2.5rem 2.5rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .blog_post {
-    padding: 3rem 3rem;
+  .most_recent {
+    padding: 0 10vw;
   }
 }
 
 @media (min-width: 1200px) {
-  .blog_post {
-    padding: 6rem 6rem;
-  }
-  .blog_post h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-  }
-  .blog_post p {
-    text-align: justify;
-    font-size: 1.3rem;
-    margin-bottom: 0;
+  .most_recent {
+    margin-bottom: 7rem;
+    padding: 0 16vw;
   }
 }
 /*# sourceMappingURL=news.css.map */
