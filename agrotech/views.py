@@ -8,6 +8,9 @@ from django.core.mail import EmailMessage
 from blog.models import Post
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from allauth.account.admin import EmailAddress
+
 
 def home(request):
     qAndA_form = QandAForm
@@ -28,9 +31,7 @@ def home(request):
                 "New Q&A form email",
                 content,
                 "Agrevo Life",
-                # ['motofumi@agrevo.life'],
                 ['info@agrevo.life'],
-                # ['htfigur@gmail.com'],
                 headers = { 'Reply To': email}
             )
             email.send()
@@ -42,9 +43,14 @@ def home(request):
     }
     return render(request, 'index.html', context)
 
-class Profile(TemplateView):
-    # template_name = 'message_sent.html'
+class Profile(LoginRequiredMixin, TemplateView):
     template_name = 'staff/profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Profile, self).get_context_data(**kwargs)
+        email_verified = EmailAddress.objects.filter(user=context['view'].request.user, verified=True).exists()
+        context.update({'email_verified':email_verified})
+        return context
 
 class MessageSent(TemplateView):
     template_name = 'message_sent.html'
