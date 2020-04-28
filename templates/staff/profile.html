@@ -48,12 +48,13 @@
         <li>Last name: <strong>{{user.last_name}}</strong></li>
         <li>Display name: <strong>{{user.username}}</strong></li>
         <li>Email: <strong>{{user.email}}</strong></li>
-        <li>{% if request.user.profile.account_verified %}Verified{% else %}Unverified{% endif %}</li>
+        <li>{% if email_verified %}Verified{% else %}Unverified{% endif %}</li>
       </ul>
       <a href="{% url 'edit_profile' %}"><p>Edit</p></a>
       <a href="{% url 'account_change_password' %}"><p>Change Password</p></a>
       <a href="{% url 'account_email' %}"><p>Email</p></a>
       {% if user.is_superuser %}<a href="{% url 'admin:index' %}"><p>Admin</p></a>{% endif %}
+      {% if user.is_superuser %}<a href="https://www.pythonanywhere.com/user/agrotech/"><p>Server</p></a>{% endif %}
       <a href="{% url 'account_logout' %}"><p>Logout</p></a>
     </div>
   </div>
