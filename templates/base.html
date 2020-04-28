@@ -32,7 +32,7 @@
                         <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#about_us">about us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#news">news</a>
+                        <a class="nav-link" href="{% if url_name == 'index' %}#news{% else %}{% url 'blog:post_list' %}{% endif %}">news</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#contact">contact</a>
@@ -52,7 +52,7 @@
                         <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#vision">vision</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-lg-none d-xl-block" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#news">news</a>
+                        <a class="nav-link d-lg-none d-xl-block" href="{% if url_name == 'index' %}#news{% else %}{% url 'blog:post_list' %}{% endif %}">news</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#technology">technology</a>
@@ -60,6 +60,11 @@
                     <li class="nav-item">
                         <a class="nav-link d-lg-none d-xl-block" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#contact">contact</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none d-xl-block" href="{% url 'profile' %}">Staff</a>
+                    </li>
+                    {% endif %}
                 </ul>
                 <form class="form-inline my-2 my-lg-0 position-relative">
                     <input class="form-control mr-sm-2" type="search" aria-label="Search">
@@ -73,36 +78,36 @@
 
     <main>
       {% block main_content %}{% endblock %}
+      {% block content %}{% endblock %}{# 3rd-party apps use "content" #}
     </main>
 
-    <footer class="d-none d-lg-block">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#about_us">about us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#vision">vision</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#news">news</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#technology">technology</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#contact">contact</a>
-                    </li>
-                </ul>
-            </div>
+    <footer>
+        <nav class="navbar navbar-expand navbar-light justify-content-center">
+            <ul class="navbar-nav justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#about_us">about us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#vision">vision</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% if url_name == 'index' %}#news{% else %}{% url 'blog:post_list' %}{% endif %}">news</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#technology">technology</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% if not url_name == 'index' %}{% url 'index' %}{% endif %}#contact">contact</a>
+              </li>
+            </ul>
         </nav>
         <div class="d-flex justify-content-center">
             <a href="">
-                <img src='{% static "img/facebook.svg" %}' alt="[Facebook Icon]">
+                <div class="svg-container">
+                  <svg viewBox="0 0 22 22" preserveAspectRatio="xMinYMin meet" class="svg-content">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.66671 1.8335H18.3334C19.3459 1.8335 20.1667 2.65431 20.1667 3.66683V18.3335C20.1667 19.346 19.3459 20.1668 18.3334 20.1668H3.66671C2.65419 20.1668 1.83337 19.346 1.83337 18.3335V3.66683C1.83337 2.65431 2.65419 1.8335 3.66671 1.8335ZM3.66671 3.6669V18.3336H18.3334V3.6669H3.66671ZM10.2053 11.0041H11.9167V16.5001H13.75V11.0041H15.5673V9.17079H13.75V8.25009C13.75 7.74383 14.1604 7.33343 14.6667 7.33343H15.5834V5.50009H14.6667C13.1479 5.50009 11.9167 6.73131 11.9167 8.25009V9.17079H10.2053V11.0041Z"/>
+                  </svg>
+                </div>
             </a>
         </div>
     </footer>

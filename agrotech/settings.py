@@ -23,23 +23,28 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7mu4dv2ea$fiz69=-be0g=1r!&t(5vuoq7f69#1m8b_jy%^51_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['agrotech.pythonanywhere.com','www.agrevo.life','127.0.0.1','localhost','agrevo.life']
-
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
+    'hitcount',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'bootstrap3',
+    'crispy_forms',
     'blog',
 ]
 
@@ -66,13 +71,28 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
 WSGI_APPLICATION = 'agrotech.wsgi.application'
 
+# Email Backend
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'info@agrevo.life'
+EMAIL_HOST_PASSWORD = 'To3mo5iki8cosmo'
+EMAIL_PORT = 587
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -126,14 +146,25 @@ STATIC_ROOT = '/home/agrotech/Agrotech-Food/static'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_DIR = os.path.join(BASE_DIR,'media')
 
+# CKEDITOR
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_RESTRICT_BY_USER = True
-
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Advanced',
-        'width': 758,
+        # 'width': 758,
+        'width': '100%',
         'height': 300,
     },
 }
+
+# HITCOUNT
+# HITCOUNT_KEEP_HIT_ACTIVE = {'minutes': 60}
+HITCOUNT_HITS_PER_IP_LIMIT = 0  # unlimited
+HITCOUNT_EXCLUDE_USER_GROUP = ()  # not used
+# HITCOUNT_KEEP_HIT_IN_DATABASE = {'seconds': 10}
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

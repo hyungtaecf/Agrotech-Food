@@ -908,3 +908,24 @@ h2 {
         }
     }
 }
+
+footer {
+    @media(max-width: 992px) {
+        background-color: $agro_color-white;
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    color: $agro_color-1;
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: $agro_color-1;
+                    }
+                }
+            }
+        }
+        path {
+            fill: $agro_color-1!important;
+        }
+    }
+}

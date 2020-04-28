@@ -1,11 +1,75 @@
 # PROJECT VIEWS.PY
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, UpdateView
+from .forms import QandAForm, UserEditForm
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
+from blog.models import Post
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-class Home(TemplateView):
-    template_name = 'index.html'
+def home(request):
+    qAndA_form = QandAForm
 
-class PostDetail(TemplateView):
-    template_name = 'post_detail.html'
+    if request.method == 'POST':
+        form = qAndA_form(data=request.POST)
+
+        if form.is_valid():
+            template = get_template('qAndA_form.txt')
+            content = {
+                'name' : request.POST.get('name'),
+                'email' : request.POST.get('email'),
+                'question' : request.POST.get('question'),
+            }
+            content = template.render(content)
+            email = request.POST.get('email')
+            email = EmailMessage(
+                "New Q&A form email",
+                content,
+                "Agrevo Life",
+                # ['motofumi@agrevo.life'],
+                ['info@agrevo.life'],
+                # ['htfigur@gmail.com'],
+                headers = { 'Reply To': email}
+            )
+            email.send()
+            return redirect('message_sent')
+
+    context = {
+        'qAndA_form':qAndA_form,
+        'most_recent':Post.objects.order_by('publish_date')
+    }
+    return render(request, 'index.html', context)
+
+class Profile(TemplateView):
+    # template_name = 'message_sent.html'
+    template_name = 'staff/profile.html'
 
 class MessageSent(TemplateView):
     template_name = 'message_sent.html'
+
+class UserEditView(UpdateView):
+    """Allow view and update of basic user data.
+    In practice this view edits a model, and that model is
+    the User object itself, specifically the names that
+    a user has.
+    The key to updating an existing model, as compared to creating
+    a model (i.e. adding a new row to a database) by using the
+    Django generic view ``UpdateView``, specifically the
+    ``get_object`` method.
+    """
+    form_class = UserEditForm
+    template_name = "staff/edit_profile.html"
+    view_name = 'edit_profile'
+    success_url = reverse_lazy(view_name)
+
+    def get_object(self):
+        return self.request.user
+
+    def form_valid(self, form):
+        form.save()
+        messages.add_message(self.request, messages.INFO, 'User profile updated')
+        return super(UserEditView, self).form_valid(form)
+
+edit_profile = login_required(UserEditView.as_view())

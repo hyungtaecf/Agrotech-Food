@@ -1012,4 +1012,19 @@ h2 {
     height: 2rem;
   }
 }
+
+@media (max-width: 992px) {
+  footer {
+    background-color: #FFF;
+  }
+  footer .navbar-nav .nav-item .nav-link {
+    color: #1F6633;
+  }
+  footer .navbar-nav .nav-item .nav-link:hover, footer .navbar-nav .nav-item .nav-link:active, footer .navbar-nav .nav-item .nav-link:focus {
+    color: #1F6633;
+  }
+  footer path {
+    fill: #1F6633 !important;
+  }
+}
 /*# sourceMappingURL=index.css.map */

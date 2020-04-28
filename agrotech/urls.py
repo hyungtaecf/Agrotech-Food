@@ -15,13 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from .views import edit_profile
 from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.Home.as_view(),name='index'),
-    path('blog_post',views.PostDetail.as_view(),name='post_detail'),
-    # path('message_sent',views.MessageSent.as_view(),name='message_sent'),
-    # path('news/', include('blog.urls', namespace='blog')),
+    path('',views.home,name='index'),
+    path('message_sent/',views.MessageSent.as_view(),name='message_sent'),
+    path('news/', include('blog.urls', namespace='blog')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('hitcount/', include(('hitcount.urls', 'hitcount'), namespace='hitcount')),
+    path('accounts/', include('allauth.urls')),
+    path('accounts/profile/', views.Profile.as_view(), name='profile'),
+    path('accounts/profile/edit', edit_profile, name='edit_profile'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
