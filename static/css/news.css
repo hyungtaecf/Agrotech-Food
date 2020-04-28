@@ -327,15 +327,13 @@
 }
 
 .most_viewed .rank {
+  display: none;
   position: absolute;
   top: 0;
   left: -4rem;
   height: 4rem;
   width: 4rem;
   background-color: #C4C4C4;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -354,7 +352,7 @@
           box-sizing: border-box;
   overflow: hidden;
   height: 14rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3.5vw;
 }
 
 .most_viewed .related_story_card .post_info {
@@ -418,6 +416,11 @@
 @media (min-width: 768px) {
   .most_viewed {
     padding: 0 10vw;
+  }
+  .most_viewed .rank {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
