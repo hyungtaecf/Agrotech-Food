@@ -39,7 +39,7 @@ def home(request):
 
     context = {
         'qAndA_form':qAndA_form,
-        'most_recent':Post.objects.order_by('publish_date')
+        'most_recent':Post.objects.order_by('-publish_date')
     }
     return render(request, 'index.html', context)
 

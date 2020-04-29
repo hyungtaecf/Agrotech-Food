@@ -43,9 +43,7 @@ class PostList(ListView):
 
     def get_queryset(self):
         for post in Post.objects.all():
-            # pass
-            print(post.publish_date)
-        return Post.objects.filter(publish_date__lte = timezone.now()).order_by('-publish_date')
+            return Post.objects.filter(publish_date__lte = timezone.now()).order_by('-publish_date')
 
 class PostDetail(HitCountDetailView):
     model = Post

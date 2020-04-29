@@ -22,12 +22,14 @@
         <img src="{% static 'img/clock.svg' %}" alt="[pencil]">
         <p>{{post.publish_date}}</p>
       </div>
-      <div class="d-flex post_info_sub">
-        <a href="{% url 'blog:post_update' slug=post.slug %}">Edit</a>
-      </div>
-      <div class="d-flex post_info_sub">
-        <a href="{% url 'blog:post_delete' slug=post.slug %}">Delete</a>
-      </div>
+      {% if user.is_staff %}
+        <div class="d-flex post_info_sub">
+          <a href="{% url 'blog:post_update' slug=post.slug %}">Edit</a>
+        </div>
+        <div class="d-flex post_info_sub">
+          <a href="{% url 'blog:post_delete' slug=post.slug %}">Delete</a>
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>
