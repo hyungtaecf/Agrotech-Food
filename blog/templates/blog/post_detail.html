@@ -44,7 +44,7 @@
 </section>
 
 <section class="related_posts">
-  <h1>Related Stories</h1>
+  <h1 class="section_title">Related Stories</h1>
   {% for article in most_viewed|slice:":2" %}
     {% if not article.pk == post.pk %}
       {% include "_post_preview-1.html" %}
@@ -52,4 +52,8 @@
   {% endfor %}
 </section>
 
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/news.js' %}" charset="utf-8"></script>
 {% endblock %}

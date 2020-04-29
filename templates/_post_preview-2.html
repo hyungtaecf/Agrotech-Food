@@ -2,7 +2,9 @@
 <div class="article_card d-flex flex-column">
   <div class="card_background_image" style="background: url({% get_media_prefix %}{{ article.image }}) no-repeat;"></div>
   <div class="post_info">
-    <h1>{{ article.title }}</h1>
+    <div class="outer d-flex align-items-end">
+      <h1>{{ article.title }}</h1>
+    </div>
     <div class="d-flex post_info_sub">
       <img src="{% static 'img/create_icon.svg' %}" alt="[pencil]">
       <p>By {{ article.author }}</p>

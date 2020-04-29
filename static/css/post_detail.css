@@ -243,7 +243,7 @@ h2 {
           box-sizing: border-box;
   overflow: hidden;
   height: 14rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3.5vw;
 }
 
 .related_posts .related_story_card .post_info {
@@ -251,17 +251,18 @@ h2 {
   width: calc(100vw - 40vw - 2vw);
 }
 
-.related_posts .related_story_card .post_info h1 {
+.related_posts .related_story_card .post_info .outer {
+  height: 4.8rem;
+  margin-bottom: 1.5vw;
+}
+
+.related_posts .related_story_card .post_info .outer h1 {
   font-family: 'Open Sans';
   font-weight: 600;
   font-size: 1rem;
   line-height: 127.1%;
   letter-spacing: 0.015em;
-  margin-bottom: .5rem;
-}
-
-.related_posts .related_story_card .post_info .post_info_sub {
-  margin-bottom: .5rem;
+  margin: 0;
 }
 
 .related_posts .related_story_card .post_info .post_info_sub img {
@@ -302,6 +303,12 @@ h2 {
   .related_posts {
     padding: 0 calc(10vw - 1rem);
   }
+  .related_posts .outer {
+    height: 7rem;
+  }
+  .related_posts .post_info_sub {
+    margin-bottom: .5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -315,7 +322,7 @@ h2 {
     margin-bottom: 7rem;
     padding: 0 16vw;
   }
-  .related_posts h1 {
+  .related_posts h1.section_title {
     font-size: 3.5rem;
     margin-bottom: 1rem;
   }
@@ -326,8 +333,11 @@ h2 {
     padding: 2rem;
     width: calc(100vw - 27rem - 32vw);
   }
-  .related_posts .related_story_card .post_info h1 {
-    font-size: 1.7vw;
+  .related_posts .related_story_card .post_info .outer {
+    max-height: 15rem;
+  }
+  .related_posts .related_story_card .post_info .outer h1 {
+    font-size: 1.7rem;
   }
   .related_posts .related_story_card .post_info .post_info_sub {
     margin-bottom: 1rem;

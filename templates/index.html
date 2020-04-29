@@ -15,7 +15,7 @@
               </div>
             </div>
             <div class="img_container">
-              <img src={% static "img/launching.png" %} alt="Image - two people planting">
+              <img src={% static "img/top2.jpg" %} alt="Image - two people planting">
             </div>
         </section>
         <!-- !END AGROTECH FOOD revolution -->
@@ -37,9 +37,9 @@
         <section id="about_us" class="d-flex flex-row">
             <div class="row">
                 <div class="col-lg-5 about_us-left d-none d-lg-block">
-                    <div class="background_image" style="background-image: url({% static "img/about_us-1.png" %});"></div>
+                    <div class="background_image" style="background-image: url({% static "img/about_us_new.png" %});"></div>
                 </div>
-                <div class="col-lg-7 about_us-right" style="background-image: url({% static "img/about_us-1.png" %});">
+                <div class="col-lg-7 about_us-right" style="background-image: url({% static "img/about_us_new.png" %});">
                     <div class="upper">
                         <h2>About us</h2>
                         <p>Through research, development, production and sales of cold-resistant plants based on Freeze-thaw awaking technology (FTAT), the Ministry aims to contribute to the world's agriculture and to solve food and global environmental problems.
@@ -51,7 +51,7 @@
                         </ul>
                     </div>
                     <div class="lower d-flex flex-column-reverse align-items-end">
-                        <img class="d-none d-lg-block" src='{% static "img/about_us-2.png" %}' alt="Banana on a leaf">
+                        <img class="d-none d-lg-block" src='{% static "img/7be49492bd97cc2cf9371d24b4a0674e_s.jpg" %}' alt="Banana on a leaf">
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
         <section id="vision">
             <div class="upper d-flex flex-row">
                 <div class="upper_pic">
-                    <img src='{% static "img/vision-1.png" %}' alt="Happy black kids">
+                    <img src='{% static "img/jigyo88.jpg" %}' alt="Happy black kids">
                 </div>
                 <div class="title my-auto">
                     <h2>Vision</h2>
@@ -76,7 +76,7 @@
                     <p>from the cure to the not-so-distant care.</p>
                 </div>
                 <div class="lower_pic d-none d-xl-block">
-                    <img src='{% static "img/vision-2.png" %}' alt="Greenhouse">
+                    <img src='{% static "img/830x495komugi 1.png" %}' alt="Greenhouse">
                 </div>
             </div>
         </section>
@@ -107,24 +107,6 @@
                   </div>
                 {% endfor %}
 
-                {% comment %}
-                <div class="col-lg-6 col_spacing">
-                    <div class="card_background_image" style="background: url({% static "img/news-2.png" %}) no-repeat;">
-                        <div class="card">
-                          <div class="tag d-flex align-items-center position-absolute">
-                            <p>harvest</p>
-                          </div>
-                            <div class="card-img-top d-none d-lg-block">
-                                <img src='{% static "img/news-2.png" %}' alt="Banana Tree">
-                            </div>
-                            <div class="card-body"></div>
-                            <p class="card-text">"Japan's Technology" to Avoid a Worldwide Food Crisis</p>
-                            <a href="" class="btn">read</a>
-                        </div>
-                    </div>
-                </div>
-                {% endcomment %}
-
             </div>
             <div class="d-flex justify-content-center btn_more">
                 <a href="{% url 'blog:post_list' %}" class="btn">more..</a>
@@ -133,7 +115,7 @@
         <!-- !END News -->
 
         <!-- Technology -->
-        <section id="technology">
+        <section id="technology" style="background-image: url({% static 'img/830_11.jpg' %});">
             <div class="technology_content d-flex flex-column">
                 <div class="d-flex justify-content-center">
                     <h2>Technology</h2>

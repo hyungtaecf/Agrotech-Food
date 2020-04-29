@@ -526,9 +526,8 @@ h2 {
 }
 
 #technology {
-    background-image: url('../img/technology.png');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-repeat: no-repeat!important;
+    background-size: 100% auto!important;
     padding: 2.5rem;
     .technology_content {
         background: rgba($agro_color-white, 0.87);
@@ -591,7 +590,7 @@ h2 {
         min-height: 45rem;
         height: 100vh;
         position: relative;
-        background-position: center bottom;
+        background-position: center bottom!important;
         padding: 0;
         .technology_content {
             position: absolute;
@@ -620,7 +619,7 @@ h2 {
     }
     @media(max-width: 768px) and (orientation:landscape) {
         .technology_content {
-            background: rgba($agro_color-white, 0.87);
+            background: rgba($agro_color-white, 0.87)!important;
         }
     }
     @media(max-width: 575px) {

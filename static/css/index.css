@@ -614,9 +614,8 @@ h2 {
 }
 
 #technology {
-  background-image: url("../img/technology.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important;
   padding: 2.5rem;
 }
 
@@ -687,7 +686,7 @@ h2 {
     min-height: 45rem;
     height: 100vh;
     position: relative;
-    background-position: center bottom;
+    background-position: center bottom !important;
     padding: 0;
   }
   #technology .technology_content {
@@ -718,7 +717,7 @@ h2 {
 
 @media (max-width: 768px) and (orientation: landscape) {
   #technology .technology_content {
-    background: rgba(255, 255, 255, 0.87);
+    background: rgba(255, 255, 255, 0.87) !important;
   }
 }
 

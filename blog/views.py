@@ -14,17 +14,11 @@ from hitcount.views import HitCountMixin
 class PostList(ListView):
     model = Post
     paginate_by = 5
-    # ordering = ['-publish_date']
+    allow_empty = False #Throws 404 if there is no Posts
 
     def listing(request):
         post_list = Post.objects.all()
         paginator = Paginator(post_list, 5)
-
-    # def get_ordering(self):
-    #     ordering = self.request.GET.get('ordering', '-publish_date')
-    #     # validate ordering here
-    #     print(ordering)
-    #     return ordering
 
     def get_context_data(self, **kwargs):
         context = super(PostList, self).get_context_data(**kwargs)
