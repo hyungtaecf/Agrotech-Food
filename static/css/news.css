@@ -378,7 +378,7 @@
 }
 
 .most_viewed .related_story_card .post_info .post_info_sub p {
-  margin: 0;
+  margin: 2vh;
   font-family: "Open Sans";
   font-size: .7rem;
   line-height: 127.1%;
