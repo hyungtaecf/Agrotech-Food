@@ -11,8 +11,19 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from allauth.account.admin import EmailAddress
 
+def get_ip(request):
+    try:
+        x_forward = request.META.get("HTTP_X_FORWARDED_FOR")
+        if x_forward:
+            ip = x_forward.split(",")[0]
+        else:
+            ip = request.META.get("REMOTE_ADDR")
+    except:
+        ip = ""
+    return ip
 
 def home(request):
+    print("--INFO: "+get_ip(request)+" visited Agrevo Life's Homepage") # prints the visitor's ip
     qAndA_form = QandAForm
 
     if request.method == 'POST':

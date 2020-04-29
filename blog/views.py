@@ -8,6 +8,7 @@ from .models import Post
 from .forms import PostForm
 from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
+from agrotech.views import get_ip
 
 # Create your views here.
 
@@ -22,6 +23,7 @@ class PostList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostList, self).get_context_data(**kwargs)
+        print("--INFO: "+str(context['view'].request.user)+" entered News Page using the IP: "+ str(get_ip(context['view'].request)))
         most_viewed = Post.objects.order_by('-hit_count_generic__hits','-publish_date')
         has_previous_3pages = context["page_obj"].number > 3
         has_previous_2pages = context["page_obj"].number > 2
