@@ -130,12 +130,15 @@
         <!-- !END Technology -->
 
         <!-- Contact us / Q&A -->
-        <section id="contact">
-            <div class="row">
-                <div class="left_image col-7 d-none d-lg-block">
-                    <img src='{% static "img/contact_us.png" %}' alt="Righting with a laptop">
-                </div>
-                <div class="contact_content col-10 col-lg-5">
+        <section id="contact" style="background:url({% static 'img/mundi.png' %}) no-repeat">
+              {% comment %}
+              <div class="row">
+
+              <div class="left_image col-7 d-none d-lg-block">
+              <img src='{% static "img/contact_us.png" %}' alt="Righting with a laptop">
+            </div>
+              {% endcomment %}
+                <div class="contact_content col-10 col-lg-6">
                     <h2>Contact us</h2>
                     <div class="row">
                         <div class="col-1">
@@ -185,17 +188,6 @@
                         </div>
                     </form>
                 </div>
-                {% comment %}
-
-                <div class="social col-2 d-block d-lg-none">
-                <div class="d-flex flex-column">
-                <a href=""><img src='{% static "img/twitter.svg" %}' alt="Twitter"></a>
-                <a href=""><img src='{% static "img/instagram.svg" %}' alt="Instagram"></a>
-                <a href=""><img src='{% static "img/facebook.svg" %}' alt="Facebook"></a>
-              </div>
-            </div>
-                {% endcomment %}
-            </div>
         </section>
         <!-- !END Contact us / Q&A -->
 {% endblock %}
