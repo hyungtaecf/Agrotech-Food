@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from allauth.account.admin import EmailAddress
+from django.shortcuts import get_object_or_404
 
 def get_ip(request):
     try:
@@ -50,7 +51,9 @@ def home(request):
 
     context = {
         'qAndA_form':qAndA_form,
-        'most_recent':Post.objects.order_by('-publish_date')
+        # 'most_recent':Post.objects.order_by('-publish_date'),
+        'article_1':get_object_or_404(Post, pk=24),
+        'article_2':get_object_or_404(Post, pk=25),
     }
     return render(request, 'index.html', context)
 
