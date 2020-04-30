@@ -188,9 +188,9 @@ h2 {
 }
 
 #about_us .about_us-right {
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 #about_us .about_us-right .upper {
@@ -206,7 +206,7 @@ h2 {
 
 #about_us .about_us-right .upper p,
 #about_us .about_us-right .upper li {
-  font-size: 1.57rem;
+  font-size: 1.4rem;
   letter-spacing: 0.015em;
   list-style-type: none;
   position: relative;
@@ -281,18 +281,18 @@ h2 {
 @media (max-width: 576px) {
   #about_us .about_us-right .upper {
     margin: auto 1.5rem;
-    padding: 2.5rem;
+    padding: 5vw;
   }
   #about_us .about_us-right .upper h2 {
-    font-size: 1.75rem;
-    height: 2.5rem;
+    font-size: 5vw;
+    height: 8vw;
     width: 50%;
     margin-bottom: 1.5rem;
-    border-bottom: 0.2rem solid #1f6c34;
+    border-bottom: 0.6vw solid #1f6c34;
   }
   #about_us .about_us-right .upper p,
   #about_us .about_us-right .upper li {
-    font-size: .75rem;
+    font-size: 4vw;
     font-family: Hind Madurai;
     font-weight: 500;
     line-height: 127.1%;
