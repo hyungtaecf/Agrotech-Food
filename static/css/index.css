@@ -731,6 +731,77 @@ h2 {
   }
 }
 
+#gallery {
+  padding-top: 3vw;
+}
+
+#gallery h2 {
+  height: 6vw;
+  text-align: center;
+  width: 20vw;
+  border-bottom: 0.2vw solid #1f6c34;
+  margin-bottom: 4.5vw;
+  font-size: 4vw;
+}
+
+#gallery .carousel .carousel-inner .carousel-item {
+  position: relative;
+  height: 40rem;
+}
+
+#gallery .carousel .carousel-inner .carousel-item img {
+  height: 40rem;
+  max-height: 100vh;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+}
+
+#gallery .carousel .carousel-control-next-icon:after {
+  content: '>';
+  font-size: 55px;
+  color: #1F6633;
+}
+
+#gallery .carousel .carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: #1F6633;
+}
+
+@media (orientation: portrait) {
+  #gallery {
+    padding-top: 3vh;
+  }
+  #gallery h2 {
+    height: 6vh;
+    text-align: center;
+    width: 20vh;
+    border-bottom: 0.2vh solid #1f6c34;
+    margin-bottom: 4.5vh;
+    font-size: 4vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #gallery .carousel-control-next-icon:after,
+  #gallery .carousel-control-prev-icon:after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #gallery .carousel-item {
+    height: 20rem !important;
+  }
+  #gallery .carousel-item img {
+    height: 20rem !important;
+  }
+}
+
 #contact {
   padding: 8.7rem 0 13.8rem 0;
   background-size: cover !important;

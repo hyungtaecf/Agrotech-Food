@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'crispy_forms',
     'blog',
+    'gallery',
 ]
 
 MIDDLEWARE = [
@@ -146,8 +147,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_DIR = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = MEDIA_DIR
 
 # CKEDITOR
 CKEDITOR_UPLOAD_PATH = "uploads/"

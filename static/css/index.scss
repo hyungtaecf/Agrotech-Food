@@ -633,6 +633,72 @@ h2 {
     }
 }
 
+#gallery {
+    padding-top: 3vw;
+    h2 {
+        height: 6vw;
+        text-align: center;
+        width: 20vw;
+        border-bottom: .2vw solid $agro_color-2;
+        margin-bottom: 4.5vw;
+        font-size: 4vw;
+    }
+    .carousel {
+        .carousel-inner {
+            .carousel-item {
+                position: relative;
+                height: 40rem;
+                img {
+                    height: 40rem;
+                    max-height: 100vh;
+                    // margin: 0 auto;
+                    position: absolute;
+                    top: -9999px;
+                    bottom: -9999px;
+                    left: -9999px;
+                    right: -9999px;
+                    margin: auto;
+                }
+            }
+        }
+        .carousel-control-next-icon:after {
+            content: '>';
+            font-size: 55px;
+            color: $agro_color-1;
+        }
+        .carousel-control-prev-icon:after {
+            content: '<';
+            font-size: 55px;
+            color: $agro_color-1;
+        }
+    }
+    @media (orientation:portrait) {
+        padding-top: 3vh;
+        h2 {
+            height: 6vh;
+            text-align: center;
+            width: 20vh;
+            border-bottom: .2vh solid $agro_color-2;
+            margin-bottom: 4.5vh;
+            font-size: 4vh;
+        }
+    }
+    @media (max-width:768px) {
+        .carousel-control-next-icon:after,
+        .carousel-control-prev-icon:after {
+            display: none;
+        }
+    }
+    @media (max-width: 576px) {
+        .carousel-item {
+            height: 20rem!important;
+            img {
+                height: 20rem!important;
+            }
+        }
+    }
+}
+
 #contact {
     padding: 8.7rem 0 13.8rem 0;
     background-size: cover!important;

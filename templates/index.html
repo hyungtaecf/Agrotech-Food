@@ -158,15 +158,40 @@
         </section>
         <!-- !END Technology -->
 
+        {# Photo Gallery #}
+        <section id="gallery">
+          <div class="d-flex justify-content-center title">
+              <h2>Gallery</h2>
+          </div>
+          <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              {% for gallery_image in gallery %}
+                <li data-target="#carouselIndicators"
+                  data-slide-to="{{ forloop.counter0 }}"
+                  class="{% if forloop.counter == 1 %}active{% endif %}"></li>
+              {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+              {% for gallery_image in gallery %}
+                <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                  <img class="d-block" src="{% get_media_prefix %}{{ gallery_image.image }}" alt="{{gallery_image.title}}">
+                </div>
+              {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </section>
+        {# !END Photo Gallery #}
+
         <!-- Contact us / Q&A -->
         <section id="contact" style="background:url({% static 'img/mundi.png' %}) no-repeat">
-              {% comment %}
-              <div class="row">
-
-              <div class="left_image col-7 d-none d-lg-block">
-              <img src='{% static "img/contact_us.png" %}' alt="Righting with a laptop">
-            </div>
-              {% endcomment %}
                 <div class="contact_content col-10 col-lg-6">
                     <h2>Contact us</h2>
                     <div class="row">
