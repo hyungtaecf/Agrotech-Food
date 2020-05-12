@@ -3,7 +3,10 @@
 
 {% block title %}Home{% endblock %}
 
-{% block styles %}<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
+{% endblock %}
 
 {% block main_content %}
         <!-- AGROTECH FOOD revolution -->
@@ -159,10 +162,14 @@
         <!-- !END Technology -->
 
         {# Photo Gallery #}
-        <section id="gallery">
-          <div class="d-flex justify-content-center title">
-              <h2>Gallery</h2>
-          </div>
+        <section id="gallery" class="d-flex justify-content-center">
+          <div class="position-relative">
+
+            <div class="d-flex justify-content-center title">
+                <h2>Gallery</h2>
+            </div>
+          {% comment %}
+
           <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               {% for gallery_image in gallery %}
@@ -187,8 +194,24 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+          {% endcomment %}
+
+<button type="button" id="prev"><</button>
+<button type="button" id="next">></button>
+          <div class="w">
+            <div class="ts">
+              {% for gallery_image in gallery %}
+              <input type="radio" id="c{{forloop.counter}}" name="ts" {% if forloop.counter == 1 %}checked="checked"{% endif %}/>
+              <label class="t" for="c{{forloop.counter}}"><img src="{% get_media_prefix %}{{ gallery_image.image }}" alt="{{ gallery_image.title }}"/></label>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
         </section>
         {# !END Photo Gallery #}
+
+
 
         <!-- Contact us / Q&A -->
         <section id="contact" style="background:url({% static 'img/mundi.png' %}) no-repeat">
@@ -244,4 +267,8 @@
                 </div>
         </section>
         <!-- !END Contact us / Q&A -->
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static "js/gallery.js" %}" charset="utf-8"></script>
 {% endblock %}
