@@ -6,6 +6,8 @@
 {% block styles %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'photobox/photobox.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'photobox/photobox.ie.css' %}">
 {% endblock %}
 
 {% block main_content %}
@@ -162,53 +164,59 @@
         <!-- !END Technology -->
 
         {# Photo Gallery #}
-        <section id="gallery" class="d-flex justify-content-center">
+        <section class="d-flex justify-content-center">
           <div class="position-relative">
 
             <div class="d-flex justify-content-center title">
                 <h2>Gallery</h2>
             </div>
+
+            <button type="button" id="prev"><</button>
+            <button type="button" id="next">></button>
+            <div class="w">
+              <div class="ts">
+                {% for gallery_image in gallery %}
+                <input type="radio" id="c{{forloop.counter}}" name="ts" {% if forloop.counter == 1 %}checked="checked"{% endif %}/>
+                <label class="t" for="c{{forloop.counter}}"><img src="{% get_media_prefix %}{{ gallery_image.image }}" alt="{{ gallery_image.title }}"/></label>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div id='gallery'>
+          {% for gallery_image in gallery %}
+            <a href="">
+                <img src="{% get_media_prefix %}{{ gallery_image.image }}"
+                    title="{{ gallery_image.title }}">
+            </a>
+          {% endfor %}
           {% comment %}
 
-          <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              {% for gallery_image in gallery %}
-                <li data-target="#carouselIndicators"
-                  data-slide-to="{{ forloop.counter0 }}"
-                  class="{% if forloop.counter == 1 %}active{% endif %}"></li>
-              {% endfor %}
-            </ol>
-            <div class="carousel-inner">
-              {% for gallery_image in gallery %}
-                <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
-                  <img class="d-block" src="{% get_media_prefix %}{{ gallery_image.image }}" alt="{{gallery_image.title}}">
-                </div>
-              {% endfor %}
-            </div>
-            <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+          <a href="http://www.somedomain.com/images/image1_large.jpg">
+              <img src="http://www.somedomain.com/images/image1_small.jpg"
+                  title="photo1 title">
+          </a>
+          <a href="http://www.somedomain.com/images/image2_large.jpg">
+              <img src="http://www.somedomain.com/images/image2_small.jpg"
+                  alt="photo2 title">
+          </a>
+          <a href="http://www.somedomain.com/images/image3_large.jpg">
+              <img src="http://www.somedomain.com/images/image3_small.jpg"
+                  title="photo3 title">
+          </a>
+          <a href="http://www.somedomain.com/images/image4_large.jpg">
+              <img src="http://www.somedomain.com/images/image4_small.jpg"
+                  alt="photo4 title" data-pb-captionLink='Google website[www.google.com]'>
+          </a>
+          <a href="http://www.youtube.com/embed/W3OQgh_h4U4" rel="video">
+              <img src="http://img.youtube.com/vi/W3OQgh_h4U4/0.jpg"
+                  title="PEOPLE ARE AWESOME 2013 FULL HD ">
+          </a>
           {% endcomment %}
+          
+      </div>
 
-<button type="button" id="prev"><</button>
-<button type="button" id="next">></button>
-          <div class="w">
-            <div class="ts">
-              {% for gallery_image in gallery %}
-              <input type="radio" id="c{{forloop.counter}}" name="ts" {% if forloop.counter == 1 %}checked="checked"{% endif %}/>
-              <label class="t" for="c{{forloop.counter}}"><img src="{% get_media_prefix %}{{ gallery_image.image }}" alt="{{ gallery_image.title }}"/></label>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-
-        </section>
         {# !END Photo Gallery #}
 
 
@@ -270,5 +278,6 @@
 {% endblock %}
 
 {% block scripts %}
+  <script src="{% static "photobox/jquery.photobox.js" %}" charset="utf-8"></script>
   <script src="{% static "js/gallery.js" %}" charset="utf-8"></script>
 {% endblock %}
