@@ -25,6 +25,7 @@ urlpatterns = [
     path('',views.home,name='index'),
     path('message_sent/',views.MessageSent.as_view(),name='message_sent'),
     path('news/', include('blog.urls', namespace='blog')),
+    path('gallery',include('gallery.urls', namespace='gallery')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('hitcount/', include(('hitcount.urls', 'hitcount'), namespace='hitcount')),
     path('accounts/', include('allauth.urls')),

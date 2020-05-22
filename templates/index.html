@@ -94,9 +94,6 @@
             </div>
             <div class="row">
                 {# {% for article in most_recent|slice:":2" %}{% endfor %} #}
-
-
-
                   <div class="col-lg-6 col_spacing">
                     <div class="card_background_image" style="background: url({% get_media_prefix %}{{ article_1.image }}) no-repeat;">
                       <div class="card">
@@ -128,7 +125,6 @@
                       </div>
                     </div>
                   </div>
-
             </div>
             <div class="d-flex justify-content-center btn_more">
                 <a href="{% url 'blog:post_list' %}" class="btn">more..</a>
@@ -164,15 +160,15 @@
         <!-- !END Technology -->
 
         {# Photo Gallery #}
-        <section class="d-flex justify-content-center">
+        <section id="gallery" class="d-flex justify-content-center">
           <div class="position-relative">
 
             <div class="d-flex justify-content-center title">
                 <h2>Gallery</h2>
             </div>
 
-            <button type="button" id="prev"><</button>
-            <button type="button" id="next">></button>
+            <button type="button" id="prev" onClick="showPrevious()"><</button>
+            <button type="button" id="next" onClick="showNext()">></button>
             <div class="w">
               <div class="ts">
                 {% for gallery_image in gallery %}
@@ -181,8 +177,14 @@
                 {% endfor %}
               </div>
             </div>
+            <div class="d-flex justify-content-center btn_more">
+                <a href="{% url 'gallery:index' %}" class="btn">more..</a>
+            </div>
           </div>
         </section>
+
+
+        {% comment %}
 
         <div id='gallery'>
           {% for gallery_image in gallery %}
@@ -191,6 +193,8 @@
                     title="{{ gallery_image.title }}">
             </a>
           {% endfor %}
+          {% endcomment %}
+
           {% comment %}
 
           <a href="http://www.somedomain.com/images/image1_large.jpg">
@@ -214,7 +218,7 @@
                   title="PEOPLE ARE AWESOME 2013 FULL HD ">
           </a>
           {% endcomment %}
-          
+
       </div>
 
         {# !END Photo Gallery #}
@@ -280,4 +284,95 @@
 {% block scripts %}
   <script src="{% static "photobox/jquery.photobox.js" %}" charset="utf-8"></script>
   <script src="{% static "js/gallery.js" %}" charset="utf-8"></script>
+
+  <script type="text/javascript">
+  /*
+  *  IMPORTANT: This script is an extension of the gallery.js script, and it
+  *  is here just for convinience in order to use Django templates features
+  */
+  function appendToImageList(gallery_image, index) {
+    var html=`<input type="radio" id=c`+(index+1)+` name="ts" `
+    if (index == 0) html+=`checked="checked"`
+    html+=`/>
+      <label class="t" for="c`+(index+1)+`"><img src="{% get_media_prefix %}`
+      +gallery_image.image+`" alt="`+gallery_image.title+`"/></label>
+      `
+    $(".ts:last-child").append(html);
+  }
+  function showPrevious() {
+    for (var i = 0; i < els.length; i++) {
+        if (els[i].checked) {
+            if (i === 0) {
+                fromIndex -= displayingItemsNumber
+                toIndex -= displayingItemsNumber
+                while (toIndex - displayingItemsNumber != fromIndex)
+                    toIndex++
+                $.ajax({
+                    url: "{% url 'gallery:ajax_retrieve' %}",
+                    data: {
+                        'fromIndex': fromIndex,
+                        'toIndex': toIndex,
+                        dataType: 'json',
+                    },
+                    success: (data)=>{
+                      retrieveData(data)
+                      els[els.length - 1].checked = true;
+                      reorder(els[els.length - 1], els);
+                    }
+                })
+            } else {
+                els[i - 1].checked = true;
+                reorder(els[i - 1], els);
+            }
+            break;
+        }
+    }
+    timeToNextPicture = Date.now() + changingInterval;
+  }
+
+  function showNext() {
+    for (var i = els.length - 1; i >= 0; i--) {
+        if (els[i].checked) {
+            if (i === els.length - 1) {
+                fromIndex += displayingItemsNumber
+                toIndex += displayingItemsNumber
+                while (toIndex - displayingItemsNumber != fromIndex)
+                    toIndex++
+                $.ajax({
+                    url: "{% url 'gallery:ajax_retrieve' %}",
+                    data: {
+                        'fromIndex': fromIndex,
+                        'toIndex': toIndex,
+                        dataType: 'json',
+                    },
+                    success: (data)=>{
+                      retrieveData(data)
+                      els[0].checked = true;
+                      reorder(els[0], els);
+                    }
+                })
+            } else {
+                els[i + 1].checked = true;
+                reorder(els[i + 1], els);
+            }
+            break;
+        }
+    }
+    timeToNextPicture = Date.now() + changingInterval;
+  }
+  function retrieveData(data) {
+    fromIndex = data.fromIndex
+    toIndex = data.toIndex
+    var slicedListOfImages = []
+    let temp = JSON.parse(data.slicedListOfImages)
+    for (let i = 0; i < temp.length; i++) {
+        slicedListOfImages.push(temp[i].fields);
+    }
+    $('.ts').empty()
+    for (let i = 0; i < temp.length; i++) {
+        appendToImageList(slicedListOfImages[i], i);
+    }
+    initialize()
+  }
+  </script>
 {% endblock %}

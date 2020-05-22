@@ -732,6 +732,7 @@ h2 {
 }
 
 #gallery {
+  /* This section has it's own CSS file, here is an extension*/
   padding-top: 3vw;
 }
 
@@ -744,32 +745,20 @@ h2 {
   font-size: 4vw;
 }
 
-#gallery .carousel .carousel-inner .carousel-item {
-  position: relative;
-  height: 40rem;
-}
-
-#gallery .carousel .carousel-inner .carousel-item img {
-  height: 40rem;
-  max-height: 100vh;
-  position: absolute;
-  top: -9999px;
-  bottom: -9999px;
-  left: -9999px;
-  right: -9999px;
-  margin: auto;
-}
-
-#gallery .carousel .carousel-control-next-icon:after {
-  content: '>';
-  font-size: 55px;
-  color: #1F6633;
-}
-
-#gallery .carousel .carousel-control-prev-icon:after {
-  content: '<';
-  font-size: 55px;
-  color: #1F6633;
+#gallery .btn_more .btn {
+  margin-top: 5.9rem;
+  margin-bottom: 8.25rem;
+  background-color: #C4C4C4;
+  border-radius: 1rem;
+  color: #FFF;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: .75rem;
+  letter-spacing: 0.015em;
+  width: 13rem;
+  height: 1.75rem;
+  text-transform: lowercase;
 }
 
 @media (orientation: portrait) {
@@ -783,22 +772,6 @@ h2 {
     border-bottom: 0.2vh solid #1f6c34;
     margin-bottom: 4.5vh;
     font-size: 4vh;
-  }
-}
-
-@media (max-width: 768px) {
-  #gallery .carousel-control-next-icon:after,
-  #gallery .carousel-control-prev-icon:after {
-    display: none;
-  }
-}
-
-@media (max-width: 576px) {
-  #gallery .carousel-item {
-    height: 20rem !important;
-  }
-  #gallery .carousel-item img {
-    height: 20rem !important;
   }
 }
 

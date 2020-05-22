@@ -1,12 +1,13 @@
 # PROJECT VIEWS.PY
-from django.views.generic import TemplateView, UpdateView
 from .forms import QandAForm, UserEditForm
+from django.views.generic import TemplateView, UpdateView
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from blog.models import Post
 from gallery.models import GalleryImage
+from gallery.views import displayingItemsNumber
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -53,7 +54,7 @@ def home(request):
     context = {
         'qAndA_form':qAndA_form,
         # 'most_recent':Post.objects.order_by('-publish_date'),
-        'gallery':GalleryImage.objects.all,
+        'gallery':GalleryImage.objects.all()[:displayingItemsNumber],
         'article_1':get_object_or_404(Post, slug='recruitment-of-fields-for-freeze-thaw-awakening-technology'),
         'article_2':get_object_or_404(Post, slug='japan-s-technology-to-avoid-a-worldwide-food-crisis'),
     }

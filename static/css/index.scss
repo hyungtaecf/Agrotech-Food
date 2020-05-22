@@ -634,6 +634,7 @@ h2 {
 }
 
 #gallery {
+    /* This section has it's own CSS file, here is an extension*/
     padding-top: 3vw;
     h2 {
         height: 6vw;
@@ -643,33 +644,21 @@ h2 {
         margin-bottom: 4.5vw;
         font-size: 4vw;
     }
-    .carousel {
-        .carousel-inner {
-            .carousel-item {
-                position: relative;
-                height: 40rem;
-                img {
-                    height: 40rem;
-                    max-height: 100vh;
-                    // margin: 0 auto;
-                    position: absolute;
-                    top: -9999px;
-                    bottom: -9999px;
-                    left: -9999px;
-                    right: -9999px;
-                    margin: auto;
-                }
-            }
-        }
-        .carousel-control-next-icon:after {
-            content: '>';
-            font-size: 55px;
-            color: $agro_color-1;
-        }
-        .carousel-control-prev-icon:after {
-            content: '<';
-            font-size: 55px;
-            color: $agro_color-1;
+    .btn_more {
+        .btn {
+            margin-top: 5.9rem;
+            margin-bottom: 8.25rem;
+            background-color: $agro_color-gray-2;
+            border-radius: 1rem;
+            color: $agro_color-white;
+            font-family: "Open Sans";
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: .75rem;
+            letter-spacing: 0.015em;
+            width: 13rem;
+            height: 1.75rem;
+            text-transform: lowercase;
         }
     }
     @media (orientation:portrait) {
@@ -681,20 +670,6 @@ h2 {
             border-bottom: .2vh solid $agro_color-2;
             margin-bottom: 4.5vh;
             font-size: 4vh;
-        }
-    }
-    @media (max-width:768px) {
-        .carousel-control-next-icon:after,
-        .carousel-control-prev-icon:after {
-            display: none;
-        }
-    }
-    @media (max-width: 576px) {
-        .carousel-item {
-            height: 20rem!important;
-            img {
-                height: 20rem!important;
-            }
         }
     }
 }
