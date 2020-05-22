@@ -10,9 +10,11 @@ var resizeAll = function() {
     });
 };
 window.addEventListener('resize', resizeAll);
-resizeAll();
 gallery.querySelectorAll('.gallery-item').forEach(function(item) {
     item.addEventListener('click', function() {
         item.classList.toggle('full');
     });
 });
+$(document).ready(() => {
+    resizeAll();
+})

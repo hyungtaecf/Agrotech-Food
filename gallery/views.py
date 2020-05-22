@@ -1,8 +1,10 @@
+from .forms import *
 from .models import *
 from django.core import serializers
 from django.http import JsonResponse
 from django.shortcuts import render
-from django.views.generic import ListView, View
+from django.urls import reverse_lazy
+from django.views.generic import FormView, ListView, View
 
 # Displaying gallery images each time in the Index Page
 displayingItemsNumber = 7 # IMPORTANT: Should be the same as in gallery.js
@@ -41,3 +43,20 @@ class RetrieveImages(View):
             'toIndex': toIndex,
         }
         return JsonResponse(data)
+
+class UploadingImagesToTheGallery(FormView):
+    form_class = MultipleImagesForm
+    template_name = 'gallery/upload.html'
+    success_url = reverse_lazy('gallery:index')
+
+    def post(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        images = request.FILES.getlist('image_field')
+        if form.is_valid():
+            for i in images:
+                image = GalleryImage.objects.create(image=i)
+                image.save()
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
