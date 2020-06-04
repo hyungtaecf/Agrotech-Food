@@ -38,6 +38,74 @@
   src: url("../fonts/opensans-all-700.woff2") format("woff2"), url("../fonts/opensans-all-700.woff") format("woff"), url("../fonts/opensans-all-700.ttf") format("ttf");
 }
 
+footer {
+  height: 19.75vw;
+  background-color: #1F6633;
+}
+
+footer .navbar {
+  height: 13.7vw;
+}
+
+footer .navbar .navbar-nav {
+  width: auto;
+}
+
+footer .navbar .nav-item {
+  margin: 0 2vw;
+  padding: 0;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+footer .navbar .nav-item .nav-link {
+  font-family: "Alegreya Sans SC";
+  font-size: 1.5vw;
+  color: #FFF;
+}
+
+footer .navbar .nav-item .nav-link:hover, footer .navbar .nav-item .nav-link:active, footer .navbar .nav-item .nav-link:focus {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+footer .svg-container {
+  display: inline-block;
+  position: relative;
+  width: 5vw;
+  padding-bottom: 100%;
+  vertical-align: middle;
+}
+
+footer .svg-container .svg-content {
+  display: inline-block;
+  position: absolute;
+  top: -2vw;
+  left: 0;
+}
+
+footer .svg-container .svg-content path {
+  fill: #FFF;
+}
+
+@media (max-width: 992px) {
+  footer .navbar-nav {
+    width: 100% !important;
+  }
+  footer .navbar-nav .nav-item {
+    margin: 0 .5vw;
+    padding: 0;
+    letter-spacing: 0.015em;
+  }
+  footer .navbar-nav .nav-item .nav-link {
+    font-size: 3vw;
+    white-space: nowrap;
+  }
+  footer .navbar-nav .nav-item .nav-link:hover, footer .navbar-nav .nav-item .nav-link:active, footer .navbar-nav .nav-item .nav-link:focus {
+    text-decoration: underline;
+  }
+}
+
 * {
   letter-spacing: 0.015em;
   line-height: 127.1%;
@@ -138,74 +206,6 @@ header .navbar .form-inline button {
   }
   header .navbar .nav-item {
     margin: 0;
-  }
-}
-
-footer {
-  height: 19.75vw;
-  background-color: #1F6633;
-}
-
-footer .navbar {
-  height: 13.7vw;
-}
-
-footer .navbar .navbar-nav {
-  width: auto;
-}
-
-footer .navbar .nav-item {
-  margin: 0 2vw;
-  padding: 0;
-  letter-spacing: 0.015em;
-  text-transform: uppercase;
-}
-
-footer .navbar .nav-item .nav-link {
-  font-family: "Alegreya Sans SC";
-  font-size: 1.5vw;
-  color: #FFF;
-}
-
-footer .navbar .nav-item .nav-link:hover, footer .navbar .nav-item .nav-link:active, footer .navbar .nav-item .nav-link:focus {
-  color: #FFF;
-  text-decoration: underline;
-}
-
-footer .svg-container {
-  display: inline-block;
-  position: relative;
-  width: 5vw;
-  padding-bottom: 100%;
-  vertical-align: middle;
-}
-
-footer .svg-container .svg-content {
-  display: inline-block;
-  position: absolute;
-  top: -2vw;
-  left: 0;
-}
-
-footer .svg-container .svg-content path {
-  fill: #FFF;
-}
-
-@media (max-width: 992px) {
-  footer .navbar-nav {
-    width: 100% !important;
-  }
-  footer .navbar-nav .nav-item {
-    margin: 0 .5vw;
-    padding: 0;
-    letter-spacing: 0.015em;
-  }
-  footer .navbar-nav .nav-item .nav-link {
-    font-size: 3vw;
-    white-space: nowrap;
-  }
-  footer .navbar-nav .nav-item .nav-link:hover, footer .navbar-nav .nav-item .nav-link:active, footer .navbar-nav .nav-item .nav-link:focus {
-    text-decoration: underline;
   }
 }
 /*# sourceMappingURL=master.css.map */

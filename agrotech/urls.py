@@ -26,9 +26,10 @@ urlpatterns = [
     path('message_sent/',views.MessageSent.as_view(),name='message_sent'),
     path('news/', include('blog.urls', namespace='blog')),
     path('gallery/',include('gallery.urls', namespace='gallery')),
+    path('store/',include('store.urls',namespace='store')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('hitcount/', include(('hitcount.urls', 'hitcount'), namespace='hitcount')),
     path('accounts/', include('allauth.urls')),
     path('accounts/profile/', views.Profile.as_view(), name='profile'),
-    path('accounts/profile/edit', edit_profile, name='edit_profile'),
+    path('accounts/profile/edit/', edit_profile, name='edit_profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
