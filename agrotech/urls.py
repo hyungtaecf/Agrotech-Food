@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='index'),
     path('message_sent/',views.MessageSent.as_view(),name='message_sent'),
+    path('search_result/',views.SearchView.as_view(),name='search_result'),
     path('news/', include('blog.urls', namespace='blog')),
     path('gallery/',include('gallery.urls', namespace='gallery')),
     path('store/',include('store.urls',namespace='store')),

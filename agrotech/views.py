@@ -1,6 +1,7 @@
 # PROJECT VIEWS.PY
 from .forms import QandAForm, UserEditForm
-from django.views.generic import TemplateView, UpdateView
+from django.db.models import Q
+from django.views.generic import TemplateView, UpdateView, View
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.template.loader import get_template
@@ -59,6 +60,20 @@ def home(request):
         'article_2':get_object_or_404(Post, slug='japan-s-technology-to-avoid-a-worldwide-food-crisis'),
     }
     return render(request, 'index.html', context)
+
+class SearchView(View):
+    def get(self, request, *args, **kwargs):
+        template = 'search_result.html'
+        input = request.GET.get('search_input')
+        result = Post.objects.filter(Q(title__icontains=input) | Q(text__icontains=input))
+        showGoToLogin = input == "login"
+
+        context = {
+            'result': result,
+            'input': input,
+            'showGoToLogin': showGoToLogin,
+        }
+        return render(request,template,context)
 
 class Profile(LoginRequiredMixin, TemplateView):
     template_name = 'staff/profile.html'

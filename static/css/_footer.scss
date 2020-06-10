@@ -1,19 +1,19 @@
 footer {
-    height: 19.75vw;
+    height: 19.75vmax;
     background-color: $agro_color-1;
     .navbar {
-        height: 13.7vw;
+        height: 13.7vmax;
         .navbar-nav {
             width: auto;
         }
         .nav-item {
-            margin: 0 2vw;
+            margin: 0 2vmax;
             padding: 0;
             letter-spacing: 0.015em;
             text-transform: uppercase;
             .nav-link {
                 font-family: "Alegreya Sans SC";
-                font-size: 1.5vw;
+                font-size: 1.5vmax;
                 color: $agro_color-white;
                 &:hover,
                 &:active,

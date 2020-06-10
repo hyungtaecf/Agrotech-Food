@@ -39,12 +39,12 @@
 }
 
 footer {
-  height: 19.75vw;
+  height: 19.75vmax;
   background-color: #1F6633;
 }
 
 footer .navbar {
-  height: 13.7vw;
+  height: 13.7vmax;
 }
 
 footer .navbar .navbar-nav {
@@ -52,7 +52,7 @@ footer .navbar .navbar-nav {
 }
 
 footer .navbar .nav-item {
-  margin: 0 2vw;
+  margin: 0 2vmax;
   padding: 0;
   letter-spacing: 0.015em;
   text-transform: uppercase;
@@ -60,7 +60,7 @@ footer .navbar .nav-item {
 
 footer .navbar .nav-item .nav-link {
   font-family: "Alegreya Sans SC";
-  font-size: 1.5vw;
+  font-size: 1.5vmax;
   color: #FFF;
 }
 

@@ -69,8 +69,8 @@
                     </li>
                     {% endif %}
                 </ul>
-                <form class="form-inline my-2 my-lg-0 position-relative">
-                    <input class="form-control mr-sm-2" type="search" aria-label="Search">
+                <form method="GET" action="{% url 'search_result' %}" class="form-inline my-2 my-lg-0 position-relative">
+                    <input class="form-control mr-sm-2" name="search_input" type="search" aria-label="Search">
                     <button class="btn position-absolute" type="submit">
                         <img src='{% static "img/search_icon.svg" %}' alt="Search Button">
                     </button>
